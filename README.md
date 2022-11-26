@@ -3,7 +3,7 @@
 This is a simple Random Forest Classifier model deployment on local host 
 
 ### Concept 
-- 1. Dataset named `heart.csv` used to train the model 
+1. Dataset named `heart.csv` used to train the model 
 - 2. The model needs 19 datas input from user 
 - 3. User enters datas then model predicts either he/she probably suffers a heart failure or not
 
