@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<!-- <link rel="stylesheet" href="../static/style.css"> -->
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1><b>Heart Failure Classifier</b></h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <label for="age">Umur:</label><br>
+    	<input type="number" name="Age" placeholder="Masukkan umur (angka)" required="required" /><br>
+      <label for="restbp">Resting BP:</label><br>
+    	<input type="number" name="RestingBP" placeholder="Tekanan darah (mmHg)" required="required" /><br>
+      <label for="kol">Kolesterol:</label><br>
+    	<input type="number" name="Cholesterol" placeholder="Serum kolesterol (mm/dl)" required="required" /><br>
+      <label for="maxhr">Detak Jantung Max:</label><br>
+    	<input type="number" name="MaxHR" placeholder="Max HR (antar 60-202)" required="required" /> <br>
+      <label for="oldpeak">Oldpeak:</label><br> 
+    	<input type="number" name="Oldepak" step="0.01" placeholder="Oldpeak" required="required" /><br>
+      <label for="FastingBS">Fasting Blood Sugar:</label><br> 
+    	<input type="number" name="FastingBS" placeholder="0 jika tidak, 1 jika ya" required="required" /><br>
+      <label for="ExerciseAngina">Exercise Angina:</label><br> 
+    	<input type="number" name="ExerciseAngina" placeholder="ExerciseAngina" required="required" /><br>
+      <label for="Sex_M">Laki-laki?</label>
+      <select name="Sex_M" >
+        <option value="0">Tidak</option>
+        <option value="1">Ya</option>
+      </select><br>
+      <label for="Sex_F">Perempuan?</label>
+      <select name="Sex_F" >
+        <option value="0">Tidak</option>
+        <option value="1">Ya</option>
+      </select><br>
+      <label for="ChestPaintType_ASY">Sakit Asymptotic?</label>
+      <select name="ChestPaintType_ASY" >
+        <option value="0">Tidak</option>
+        <option value="1">Ya</option>
+      </select><br>
+      <label for="ChestPaintType_ATA">Sakit Atypical Angina?</label>
+      <select name="ChestPaintType_ATA" >
+        <option value="0">Tidak</option>
+        <option value="1">Ya</option>
+      </select><br>
+      <label for="ChestPaintType_NAP">Sakit Non-Anginal Pain?</label>
+      <select name="ChestPaintType_NAP" >
+        <option value="0">Tidak</option>
+        <option value="1">Ya</option>
+      </select><br>
+      <label for="ChestPaintType_TA">Sakit Typical Angina?</label>
+      <select name="ChestPaintType_TA" >
+        <option value="0">Tidak</option>
+        <option value="1">Ya</option>
+      </select><br>
+      <label for="RestingECG_LVH">left ventricular hypertrophy?</label>
+      <select name="RestingECG_LVH" >
+        <option value="0">Tidak</option>
+        <option value="1">Ya</option>
+      </select><br>
+      <label for="RestingECG_Normal">Normal?</label>
+      <select name="RestingECG_Normal" >
+        <option value="0">Tidak</option>
+        <option value="1">Ya</option>
+      </select><br>
+      <label for="RestingECG_ST">ST-T wave abnormality?</label>
+      <select name="RestingECG_ST" >
+        <option value="0">Tidak</option>
+        <option value="1">Ya</option>
+      </select><br>
+      <label for="ST_Slope_Down">Down?</label>
+      <select name="ST_Slope_Down" >
+        <option value="0">Tidak</option>
+        <option value="1">Ya</option>
+      </select><br>
+      <label for="ST_Slope_Flat">Flat?</label>
+      <select name="ST_Slope_Flat" >
+        <option value="0">Tidak</option>
+        <option value="1">Ya</option>
+      </select><br>
+      <label for="ST_Slope_Up">Up?</label>
+      <select name="ST_Slope_Up" >
+        <option value="0">Tidak</option>
+        <option value="1">Ya</option>
+      </select><br>
+      
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
