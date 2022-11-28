@@ -20,3 +20,7 @@ This is a simple Random Forest Classifier model deployment on local host http://
 10. Oldpeak: oldpeak = ST [Numeric value measured in depression]
 11. ST_Slope: the slope of the peak exercise ST segment [Up: upsloping, Flat: flat, Down: downsloping]
 12. HeartDisease: output class [1: heart disease, 0: Normal]
+
+
+### OUTPUT 
+![home](https://user-images.githubusercontent.com/101930615/204236922-14b2ab10-b8f6-40d4-9d7f-453ff28b1c05.png)
