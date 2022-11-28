@@ -24,3 +24,4 @@ This is a simple Random Forest Classifier model deployment on local host http://
 
 ### OUTPUT 
 ![home](https://user-images.githubusercontent.com/101930615/204236922-14b2ab10-b8f6-40d4-9d7f-453ff28b1c05.png)
+![predict](https://user-images.githubusercontent.com/101930615/204237402-b9270b78-ce1d-418e-ac1f-c08a2044e851.png)
